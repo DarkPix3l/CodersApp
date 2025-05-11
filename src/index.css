@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    /* color palette */
+    --Primary-Color: #8053ff;
+    --Main-Body-Color: #23155b;
+    --Gray-Light-Color: #817d8e;
+    --White-Color: #ffffff;
+    --Background-Color: #f4f4f4;
+  
+    /* consistent styling */
+    --default-radius: 5px;
+    --section-margin-TB: 50px;
+  
+    /* Error */
+    --errorColor: rgb(255 38 38);
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+    font-family: "Noto Sans Khojki", sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul,
+  ol {
+    list-style-type: none;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-family: "Noto Sans Khojki", sans-serif;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: var(--default-radius);
+  }
+
+  .wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 2vw + 0.75rem, 3rem);
+    font-weight: 900;
+  }
+
+  h2 {
+    font-size: clamp(1rem, 5vw + 0.75rem, 2rem);
+  }
+
+  h2,
+  h3 {
+    font-weight: 900;
+    margin: 10px 0;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: var(--Primary-Color);
+  }
+
+  form,
+  input,
+  label {
+    display: block;
+    max-width: 600px;
+  }
+
+  label {
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 10px;
+    outline: 1px solid var(--Primary-Color);
+    padding: 15px;
+    width: 100%;
+    background-color: var(--White-Color);
+    color: #35383a;
+    border-radius: var(--default-radius);
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  textarea:focus {
+    outline: 3px solid rgb(0 229 177);
+  }
+  .errorMessages {
+    display: block;
+    width: 100%;
+    color: var(--errorColor);
+    margin: 5px 0;
+    font-weight: 600;
+    /* height: 0px; */
+    /* transition: height 0.4s ease; */
+  }
+}
+
+@layer components {
+  .purple-span {
+    color: var(--Primary-Color);
+  }
+
+  .purple-fill-btn {
+    background-color: var(--Primary-Color);
+    color: var(--White-Color);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--default-radius);
+  }
+
+  .purple-border-btn {
+    border: 1px solid var(--Primary-Color);
+    color: var(--Primary-Color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--default-radius);
+  }
+
+  .key-card {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    background-color: var(--White-Color);
+  }
+
+  .list-card {
+    padding: 20px;
+    border-radius: var(--default-radius);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
