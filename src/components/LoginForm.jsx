@@ -24,7 +24,7 @@ function LoginForm() {
 
     try {
       await dispatch(signin({ email, password })).unwrap();
-      navigate("/dashboard");
+      navigate("/leaderboard");
     } catch (err) {
       alert("Invalid email or password");
     }
