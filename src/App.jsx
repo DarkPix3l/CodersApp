@@ -4,7 +4,7 @@ import Dashboard from "./pages/DashBoard.jsx";
 import Leaderboard from "./pages/Leaderboard.jsx";
 import { Link, NavLink, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./components/protectedRoute.jsx";
-
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -14,10 +14,10 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
 
         <Route element={<ProtectedRoute />}>
+        <Route path="/profile" element={<Profile />} />
           {/* <Route path="/dashboard" element={<Dashboard />} /> */}
           <Route path="/leaderboard" element={<Leaderboard />} />
         </Route>
-
       </Routes>
     </>
   );
