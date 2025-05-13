@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import DropdownMenu from "./UI/DropdownMenu"
+
 
 export default function Menu() {
   return (
@@ -18,8 +20,14 @@ export default function Menu() {
               <Link to="/leaderboard">Leaderboard</Link>
             </li>
           </ul>
+
         </div>
+        <div className='flex gap-5'>
+          <Link to="/profile">
         <img src="img/cat.png" alt="avatar" className="size-9" />
+        </Link>
+        <DropdownMenu/>
+        </div>
       </nav>
   )
 }
