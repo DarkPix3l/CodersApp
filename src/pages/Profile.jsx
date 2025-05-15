@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from '../components/Menu';
+import Menu from '../components/UI/Menu';
 import ProfileForm from '../components/profile/ProfileForm';
 import ProfileStats from '../components/profile/ProfileStats';
 

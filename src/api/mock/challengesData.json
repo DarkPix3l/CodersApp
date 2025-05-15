@@ -6,6 +6,7 @@
     "description": "...",
     "category": "Data structure",
     "Difficulty": "Easy",
+    "color": "aqua",
     "status": "Completed",
     "solutionRate": "45%",
     "maintainer": "Goerge Harvy"
@@ -17,6 +18,7 @@
     "description": "...",
     "category": "Data structure",
     "Difficulty": "Moderate",
+    "color": "orange",
     "status": "Attempted",
     "solutionRate": "45%",
     "maintainer": "Goerge Harvy"
@@ -28,6 +30,7 @@
     "description": "...",
     "category": "Data structure",
     "Difficulty": "Moderate",
+    "color": "orange",
     "status": "Pending",
     "solutionRate": "45%",
     "maintainer": "Goerge Harvy"
@@ -39,6 +42,7 @@
     "description": "...",
     "category": "Graphs",
     "Difficulty": "Hard",
+    "color": "crimson",
     "status": "Completed",
     "solutionRate": "30%",
     "maintainer": "Nina Park"
@@ -50,6 +54,7 @@
     "description": "...",
     "category": "Graphs",
     "Difficulty": "Moderate",
+    "color": "orange",
     "status": "Attempted",
     "solutionRate": "50%",
     "maintainer": "Nina Park"
@@ -61,6 +66,7 @@
     "description": "...",
     "category": "Graphs",
     "Difficulty": "Easy",
+    "color": "aqua",
     "status": "Pending",
     "solutionRate": "60%",
     "maintainer": "Nina Park"
@@ -72,6 +78,7 @@
     "description": "...",
     "category": "Databases",
     "Difficulty": "Easy",
+    "color": "aqua",
     "status": "Completed",
     "solutionRate": "75%",
     "maintainer": "Tariq J."
@@ -83,6 +90,7 @@
     "description": "...",
     "category": "Databases",
     "Difficulty": "Moderate",
+    "color": "orange",
     "status": "Attempted",
     "solutionRate": "55%",
     "maintainer": "Tariq J."
@@ -94,6 +102,7 @@
     "description": "...",
     "category": "Databases",
     "Difficulty": "Hard",
+    "color": "crimson",
     "status": "Pending",
     "solutionRate": "25%",
     "maintainer": "Tariq J."

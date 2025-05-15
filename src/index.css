@@ -73,7 +73,7 @@
 
   h1 {
     font-size: clamp(2rem, 2vw + 0.75rem, 3rem);
-    font-weight: 900;
+    font-weight: 600;
   }
 
   h2 {
@@ -82,8 +82,8 @@
 
   h2,
   h3 {
-    font-weight: 900;
-    margin: 10px 0;
+    font-weight: 600;
+    /* margin: 10px 0; */
   }
 
   h3 {
@@ -145,16 +145,7 @@
     /* height: 0px; */
     /* transition: height 0.4s ease; */
   }
-
-  .data-table th, .data-table td{
-    padding: 1rem;
-  }
   
-  .data-table td{
-    border-bottom: 1px solid #b6bfce;
-    background-color: #f4f4f4;
-  }
-
 }
 
 @layer components {
@@ -177,5 +168,26 @@
     border-radius: var(--default-radius);
   }
 
+  .data-table tr{
+    border-bottom: 1px solid gray;
+  }
+
+  .data-table td {
+    @apply bg-gray-100 dark:bg-[#4322C9A3] p-[0.5rem] text-[0.5rem];
+  }
+
+  .data-table tr:last-child {
+    border: none;
+  }
+
+  .data-table th {
+    @apply p-[0.55rem] text-[0.5rem];
+  }
+
+  @media (min-width: 640px) {
+    .data-table td, .data-table th {
+      @apply p-[1rem] text-[0.9rem]; 
+    }
+  }
 
 }
