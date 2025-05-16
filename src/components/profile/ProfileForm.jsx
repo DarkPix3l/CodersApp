@@ -14,14 +14,14 @@ export default function ProfileForm() {
   };
   console.log("Selected avatar:", avatar);
   return (
-    <form className="w-full max-w-none rounded-lg shadow-[10px_5px_35px_rgba(0,0,0,0.25)] p-6">
+    <form className="w-full max-w-none rounded-lg shadow-[1px_3px_15px_rgba(0,0,0,0.45)] p-6">
       
         <p className="font-semibold ml-auto w-fit">Rank: #42</p>
       <div className="relative w-24 h-24 mb-4">
         <img
           src={avatar || '/img/cat.png'}
           alt="Avatar"
-          className="w-24 h-24 object-cover rounded-full border-2 border-gray-300 dark:border-gray-600 "
+          className="w-24 h-24 object-cover rounded-full border-2 border-gray-300"
         />
         <label className="absolute bottom-0 right-0 rounded-full p-1 cursor-pointer">
           <FiEdit2 className="text-white text-xl"/>

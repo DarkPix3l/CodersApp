@@ -10,7 +10,7 @@ export default function ThemeToggleButton() {
   }, [theme]);
 
   return (
-    <button onClick={toggle} className="p-2 rounded-full bg-gray-200" aria-label="Toggle theme">
+    <button onClick={toggle} className="rounded-full bg-gray-200" aria-label="Toggle theme">
       {theme === "dark" ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-gray-800" />}
     </button>
   );

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ProgressBar from "./ProgressBar.jsx";
 import HeatMap from "@uiw/react-heat-map";
-import Tooltip from '@uiw/react-tooltip';
+import Tooltip from "@uiw/react-tooltip";
 
 export default function ProfileStats() {
   //Statistic text
@@ -10,21 +10,24 @@ export default function ProfileStats() {
   const percent = Math.round((solved / total) * 100);
 
   const value = [
-    { date: '2025/01/11', count:2 },
-    ...[...Array(17)].map((_, idx) => ({ date: `2025/01/${idx + 10}`, count: idx, })),
-    ...[...Array(17)].map((_, idx) => ({ date: `2025/02/${idx + 10}`, count: idx, })),
-    { date: '2025/04/12', count:2 },
-    { date: '2025/05/01', count:5 },
-    { date: '2025/05/02', count:5 },
-    { date: '2025/05/03', count:1 },
-    { date: '2025/05/04', count:11 },
-    { date: '2025/05/08', count:32 },
+    { date: "2025/01/11", count: 2 },
+    ...[...Array(17)].map((_, idx) => ({
+      date: `2025/01/${idx + 10}`,
+      count: idx,
+    })),
+    ...[...Array(17)].map((_, idx) => ({
+      date: `2025/02/${idx + 10}`,
+      count: idx,
+    })),
+    { date: "2025/04/12", count: 2 },
+    { date: "2025/05/01", count: 5 },
+    { date: "2025/05/02", count: 5 },
+    { date: "2025/05/03", count: 1 },
+    { date: "2025/05/04", count: 11 },
+    { date: "2025/05/08", count: 32 },
   ];
-  
 
   const [range, setRange] = useState(5); //Cell radius
-
-
 
   //color mode intensity obj
   const pannelColor = {
@@ -46,30 +49,16 @@ export default function ProfileStats() {
     },
   };
 
-
-  //et voilà, js changing with color mode
   const [panelColors, setPanelColors] = useState(pannelColor.light); // default
-  /* const [textColor, setTextColor] = useState("#000"); */
-
-  useEffect(() => {
-    const checkDarkMode = () => window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    if (checkDarkMode()) {
-      setPanelColors(pannelColor.dark);
-      console.log(checkDarkMode());
-    } else {
-      setPanelColors(pannelColor.light);
-      console.log(checkDarkMode());
-    }
-
-    /* setTextColor(checkDarkMode() ? "#fff" : "#000"); */
-  }, []);
-
-
 
   return (
-    <div className="w-full rounded-lg shadow-[10px_5px_35px_rgba(0,0,0,0.25)] p-6">
-      <div className="rounded-lg shadow-[1px_1px_5px_rgba(0,0,0,0.15)] p-6">
+    <div className="w-full rounded-lg shadow-[1px_3px_15px_rgba(0,0,0,0.45)] p-6">
+      <div
+        className="rounded-lg shadow-[1px_3px_10px_rgba(0,0,0,0.45)] p-6"
+        style={{
+          backgroundColor: "var(--top-coders-bg)",
+        }}
+      >
         <h2 className="text-xl font-bold mb-4">Completed Challeges</h2>
 
         <ProgressBar label="Easy" percent={60} color="aqua" />
@@ -85,7 +74,11 @@ export default function ProfileStats() {
       <div className="mt-9">
         <HeatMap
           value={value}
-          style={{ color: "#ad001d", "--rhm-rect-active": "blue", width: "100%" }}
+          style={{
+            color: "#ad001d",
+            "--rhm-rect-active": "blue",
+            width: "100%",
+          }}
           startDate={new Date("2025/01/01")}
           endDate={new Date("2025/12/31")}
           panelColors={panelColors}
@@ -96,7 +89,7 @@ export default function ProfileStats() {
           rectRender={(props, data) => {
             // if (!data.count) return <rect {...props} />;
             return (
-              <Tooltip placement="top" content={`count: ${data.count || 0}`} >
+              <Tooltip placement="top" content={`count: ${data.count || 0}`}>
                 <rect {...props} />
               </Tooltip>
             );
