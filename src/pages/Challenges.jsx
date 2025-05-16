@@ -36,7 +36,13 @@ export default function Challenges() {
     <>
       <Menu />
 
-      <section className="wrap dark:text-white dark:bg-gradient-to-b from-[#4322C9A3] to-[#787cb6e3] min-h-screen p-5 md:p-10">
+      <main
+        className="wrap min-h-screen p-5 md:p-10 transition-colors duration-500 ease-in-out"
+        style={{
+          color: "var(--text-color)",
+          backgroundImage: "var(--bg-gradient)",
+        }}
+      >
         <div className="mb-5">
           <h1> Challenges</h1>
           <p>Select Category</p>
@@ -47,11 +53,12 @@ export default function Challenges() {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-6 py-2.5 rounded-lg ${
-                selectedCategory === cat
-                  ? "bg-indigo-500 dark:bg-amber-500 dark:text-black text-white"
-                  : "bg-gray-200 dark:bg-indigo-900"
-              }`}
+              className="px-6 py-2.5 rounded-lg"
+    
+              style={{
+                backgroundColor: selectedCategory === cat ? "var(--btn-bg-selected)" : "var(--btn-bg-default)",
+                color: selectedCategory === cat ? "var(--btn-text-selected)" : "var(--btn-text-default)",
+              }}
             >
               {cat}
             </button>
@@ -63,7 +70,11 @@ export default function Challenges() {
             {/* Table Mask */}
             <div className="overflow-x-auto w-full">
               <table className="data-table text-left w-full min-w-full">
-                <thead className="bg-gray-400 dark:bg-[#4322C9A3]">
+                <thead
+                  style={{
+                    backgroundColor: "var(--table-head)",
+                  }}
+                >
                   <tr>
                     <th>Status</th>
                     <th>Title</th>
@@ -92,13 +103,12 @@ export default function Challenges() {
             </div>
           </div>
 
-          {/* Trending Categories */}
           <div className="flex-1">
             <TrendingCategories />
             <TopCodersList />
           </div>
         </div>
-      </section>
+      </main>
     </>
   );
 }

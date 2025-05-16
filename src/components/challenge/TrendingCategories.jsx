@@ -10,19 +10,33 @@ export default function TrendingCategories() {
 
   // Convert to array and sort by count descending
   const sortedCategories = Object.entries(categoryCounts)
-    .map(([category, count], index) => ({ category, count, id:index }))
+    .map(([category, count], index) => ({ category, count, id: index }))
     .sort((a, b) => b.count - a.count);
 
   return (
-    <div className="bg-[#E5E7EB] dark:bg-[#4322C9A3] p-5 shadow-[1px_1px_7px_rgba(0,0,0,0.45)] rounded-2xl">
-     
-        <h2 className="mb-5 text-center">Trending Categories</h2>
-      
+    <div className="p-5 shadow-[1px_1px_7px_rgba(0,0,0,0.45)] rounded-xl transition-colors duration-500 ease-in-out">
+      <h2 className="mb-5 text-center">Trending Categories</h2>
+
       <div className="flex flex-col gap-4 md:flex-row ">
         {sortedCategories.map((item) => (
-          <span key={item.id} className="p-3 rounded-xl bg-amber-200 dark:bg-[#9378ffb4]">
+          <span
+            key={item.id}
+            className="p-3 rounded-xl"
+            style={{
+              backgroundColor: "var(--span-bg)",
+            }}
+          >
             <p>
-              {item.category} <span className="bg-amber-600 dark:bg-indigo-50 dark:text-black rounded-2xl px-4 py-1 ml-2">{item.count}</span>
+              {item.category}{" "}
+              <span
+                className="rounded-xl px-4 py-1 ml-2"
+                style={{
+                  backgroundColor: "var(--categories-num-bg)",
+                  color: "var(--span-text)",
+                }}
+              >
+                {item.count}
+              </span>
             </p>
           </span>
         ))}

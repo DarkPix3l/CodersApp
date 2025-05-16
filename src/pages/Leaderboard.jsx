@@ -1,4 +1,3 @@
-import React from "react";
 import Menu from "../components/UI/Menu";
 
 // Dummy data
@@ -31,34 +30,51 @@ export default function Leaderboard() {
     <>
       <Menu />
 
-      <section className="bg-[#E5E7EB] min-h-svh">
-        <div className="p-6">
+      <main
+        className="min-h-svh transition-colors duration-500 ease-in-out"
+        style={{
+          color: "var(--text-color)",
+          backgroundImage: "var(--bg-gradient)",
+        }}
+      >
+        <div className="min-h-screen p-5 md:p-10">
           <h1 className="font-medium">Leaderboard</h1>
-        </div>
-
-        <table className="w-full text-center shadow-[10px_5px_35px_rgba(0,0,0,0.25)]">
-          <thead>
-            <tr>
-              <th className="p-3 border-b border-gray-400">Rank</th>
-              <th className="p-3 border-b border-gray-400">Name</th>
-              <th className="p-3 border-b border-gray-400">Score</th>
-              <th className="p-3 border-b border-gray-400">Solved Challenges</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((user) => (
-              <tr key={user.rank}>
-                <td className="p-3 border-b border-gray-400">{user.rank}</td>
-                <td className="p-3 border-b border-gray-400">
-                  {user.first_name} {user.last_name}
-                </td>
-                <td className="p-3 border-b border-gray-400">{user.score}</td>
-                <td className="p-3 border-b border-gray-400">{user.solved_challenges}</td>
+        
+        <div className="w-full h-fit  rounded-xl overflow-hidden shadow-[1px_3px_15px_rgba(0,0,0,0.35)]"> {/* tableMask */}
+          <table
+            className="data-table w-full text-center shadow-[10px_5px_35px_rgba(0,0,0,0.25)] "
+            style={{
+              backgroundColor: "var(--table-body)",
+            }}
+          >
+            <thead
+              style={{
+                backgroundColor: "var(--table-head)",
+              }}
+            >
+              <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Score</th>
+                <th>Solved Challenges</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
+            </thead>
+            <tbody>
+              {data.map((user) => (
+                <tr key={user.rank}>
+                  <td>{user.rank}</td>
+                  <td>
+                    {user.first_name} {user.last_name}
+                  </td>
+                  <td>{user.score}</td>
+                  <td>{user.solved_challenges}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        </div>
+      </main>
     </>
   );
 }
