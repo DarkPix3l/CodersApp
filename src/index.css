@@ -20,7 +20,7 @@
   --Gray-Light-Color: #817d8e;
   --White-Color: #ffffff;
   --Background-Color: #f4f4f4;
-
+  
   /* consistent styling */
   --default-radius: 5px;
   --section-margin-TB: 50px;
@@ -146,6 +146,7 @@
     /* height: 0px; */
     /* transition: height 0.4s ease; */
   }
+
 }
 
 @layer components {
@@ -220,3 +221,5 @@
   --btn-bg-selected: #6366f1; 
   --btn-bg-default: #e5e7eb;
 }
+
+

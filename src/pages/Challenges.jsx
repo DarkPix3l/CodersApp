@@ -13,18 +13,27 @@ export default function Challenges() {
   const navigate = useNavigate();
 
   const handleRowClick = (slug) => {
-    navigate(`/challenge/${slug}`);
+    navigate(`/workspace/${slug}`);
+    /*
+    The navigate() function from react-router-dom performs a client-side redirect. It doesn’t return a promise or have an "after it's done" callback, because the component unmounts immediately after navigating.
+    */
   };
 
   //filterBar
   const [selectedCategory, setSelectedCategory] = useState("All");
   const filteredChallenges =
-    selectedCategory === "All" ? challengesData : challengesData.filter((item) => item.category === selectedCategory);
+    selectedCategory === "All"
+      ? challengesData
+      : challengesData.filter((item) => item.category === selectedCategory);
 
   /* deterministic approach better then Math.Random in this case, it isn't an elegant way but it works*/
   /* getting 1 function from this is that I will not be able to assign the color to the right propriety" */
   const getIconById = (id) => {
-    const icons = [<BsCheck2Circle />, <LuFileSpreadsheet />, <FaRegHourglass />];
+    const icons = [
+      <BsCheck2Circle />,
+      <LuFileSpreadsheet />,
+      <FaRegHourglass />,
+    ];
     return icons[id % icons.length];
   };
   const getColorById = (id) => {
@@ -54,10 +63,15 @@ export default function Challenges() {
               key={cat}
               onClick={() => setSelectedCategory(cat)}
               className="px-6 py-2.5 rounded-lg"
-    
               style={{
-                backgroundColor: selectedCategory === cat ? "var(--btn-bg-selected)" : "var(--btn-bg-default)",
-                color: selectedCategory === cat ? "var(--btn-text-selected)" : "var(--btn-text-default)",
+                backgroundColor:
+                  selectedCategory === cat
+                    ? "var(--btn-bg-selected)"
+                    : "var(--btn-bg-default)",
+                color:
+                  selectedCategory === cat
+                    ? "var(--btn-text-selected)"
+                    : "var(--btn-text-default)",
               }}
             >
               {cat}
@@ -91,10 +105,14 @@ export default function Challenges() {
                       onClick={() => handleRowClick(item.slug)}
                       title={item.title}
                     >
-                      <td className={`text-2xl ${getColorById(item.id)}`}>{getIconById(item.id)}</td>
+                      <td className={`text-2xl ${getColorById(item.id)}`}>
+                        {getIconById(item.id)}
+                      </td>
                       <td>{item.title}</td>
                       <td>{item.category}</td>
-                      <td className={`bg-[${item.color}]`}>{item.Difficulty}</td>
+                      <td className={`bg-[${item.color}]`}>
+                        {item.Difficulty}
+                      </td>
                       <td>{item.solutionRate}</td>
                     </tr>
                   ))}

@@ -1,0 +1,27 @@
+[data-theme="dark"] .wmde-markdown {
+  background-color: transparent;
+  color: #e4e4e4;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+/* [data-theme="dark"] .wmde-markdown h1,
+[data-theme="dark"] .wmde-markdown h2,
+[data-theme="dark"] .wmde-markdown h3 {
+  color: #fff;
+} */
+/* 
+[data-theme="dark"] .wmde-markdown code {
+  background-color: #1e1e1e;
+  color: #f8f8f2;
+}
+
+[data-theme="dark"] .wmde-markdown pre code {
+  background-color: #1e1e1e;
+  border-radius: 0.25rem;
+} */
+
+[data-theme="light"] .wmde-markdown {
+  background-color: transparent;
+  color: #000000;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
