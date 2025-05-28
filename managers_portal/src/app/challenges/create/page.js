@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@src/app/_components/Select";
 import { Input } from "@src/app/_components/Input";
+import Playground from "@src/app/_components/Playground";
 
 // Dynamically import SimpleMDE with no SSR (optional if already client component)
 const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
@@ -31,18 +32,19 @@ export default function ChallengesPage() {
 
         <form className="max-w-none w-full h-full grid grid-cols-2">
           <div>
-            <label for="title">
+            <label htmlFor="title">
               Title*:
               <Input
                 type="text"
                 id="title"
                 name="title"
-                placeholder="title"
+                placeholder="Title"
                 value="Challenge title"
+                  onChange={(e) => setTitle(e.target.value)}
               />
             </label>
 
-            <label for="category">
+            <label htmlFor="category">
               Category*:
               <Input
                 type="text"
@@ -50,10 +52,11 @@ export default function ChallengesPage() {
                 name="category"
                 placeholder="category"
                 value="enter the category"
+                onChange={setValue}
               />
             </label>
 
-            <label for="level">
+            <label htmlFor="level">
               Level*:
               <Select>
                 <SelectTrigger className="w-full">
@@ -69,6 +72,7 @@ export default function ChallengesPage() {
 
             <SimpleMDE value={value} onChange={setValue} />
           </div>
+          <Playground/>
         </form>
       </main>
     </>
