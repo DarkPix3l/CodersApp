@@ -1,7 +1,8 @@
 "use client";
 
 import Menu from "src/app/_components/Menu";
-import challenges from "@src/data/db.json";
+/* import challenges from "@src/data/db.json"; */
+import challenges from "db.json";
 
 import "easymde/dist/easymde.min.css";
 import dynamic from "next/dynamic";

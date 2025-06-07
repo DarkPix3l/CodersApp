@@ -64,10 +64,40 @@ export default function LoginPage() {
           onSubmit={handleSubmit}
           ref={formRef}
         >
-          <h2 className="mb-5 text-[#8053ff] font-normal">Log in Now!</h2>
+          <h2 className="mb-5 text-[#8053ff] font-normal">Sign Up Now!</h2>
           {error.global && (
             <p className="text-red-500 mb-4 text-sm">{error.global}</p>
           )}
+          <div>
+            <Input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              value={credentials.name}
+              onChange={(e) =>
+                setCredentials({ ...credentials, name: e.target.value })
+              }
+            />
+            {error.password && (
+              <p className="text-red-500 mb-4 text-sm">{error.name}</p>
+            )}
+          </div>
+          <div>
+            <Input
+              type="text"
+              id="surname"
+              name="surname"
+              placeholder="Surname"
+              value={credentials.surname}
+              onChange={(e) =>
+                setCredentials({ ...credentials, surname: e.target.value })
+              }
+            />
+            {error.surname && (
+              <p className="text-red-500 mb-4 text-sm">{error.surname}</p>
+            )}
+          </div>
 
           <div>
             <Input
@@ -99,9 +129,10 @@ export default function LoginPage() {
               <p className="text-red-500 mb-4 text-sm">{error.password}</p>
             )}
           </div>
-          <Button disabled={loading} variant={"blue"}>
+
+          <Button disabled={loading} variant={"blue"} className={"Signup"}>
             {" "}
-            {loading ? "Logging in..." : "Log In"}
+            {loading ? "Signing up..." : "Sign up"}
           </Button>
           <p className="mt-5">
             New to CodeCLA?{" "}

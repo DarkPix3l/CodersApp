@@ -1,6 +1,7 @@
 "use client";
 
-import challenges from "@src/data/db.json";
+/* import challenges from "@src/data/db.json"; */
+import challenges from "db.json";
 import { BsTrash, BsPencil } from "react-icons/bs";
 import { Button } from "./Button";
 import Link from "next/link";
