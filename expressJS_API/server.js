@@ -5,8 +5,9 @@ import authRoutes from "./routes/auth.routes.js";
 import profileRoutes from "./routes/profile.routes.js";
 import { startDatabase } from "./db.js";
 import challengeRoutes from "./routes/challenge.routes.js";
-import categoryRoutes from "./routes/category.route.js";
 import leaderboardRoutes from './routes/leaderboard.route.js';
+import statsRoutes from './routes/statistic.route.js';
+import submissionRoutes from './routes/submission.route.js'
 
 dotenv.config();
 startDatabase();
@@ -22,8 +23,9 @@ app.use(cors({ origin: FRONTEND_ORIGIN }));
 app.use("/auth", authRoutes);
 app.use("/profile", profileRoutes);
 app.use("/challenges", challengeRoutes);
-app.use("/categories", categoryRoutes);
 app.use('/leaderboard', leaderboardRoutes);
+app.use("/stats", statsRoutes);
+app.use("/submission", submissionRoutes);
 
 app.listen(PORT, () => {
   console.log(`server is running at ${PORT}`);
