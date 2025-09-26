@@ -58,3 +58,7 @@ build
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# focus on 1st version of the exercise
+expressJS_API/
+managers_portal/
