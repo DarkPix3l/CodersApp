@@ -1,11 +1,7 @@
 import SignUpBtn from "./SignUpBtn.jsx";
 import Input from "./Input.jsx";
 import { Link } from "react-router-dom";
-import {
-  emailRules,
-  requiredRules,
-  passwordRules,
-} from "../utils/validations.js";
+import { emailRules, requiredRules, passwordRules } from "../utils/validations.js";
 import React, { useState } from "react";
 
 function SignUpForm() {
@@ -16,7 +12,6 @@ function SignUpForm() {
     name: "",
     surname: "",
   });
-  const [error, setError] = useState("");
 
   const handleEmailChange = (e) => {
     setCredentials({ ...credentials, email: e.target.value });
@@ -39,11 +34,10 @@ function SignUpForm() {
       <form
         className="my-[10%] max-w-[600px] p-8 bg-white rounded-xl shadow-2xl md:w-[80%]"
         action="#"
-        method="post"
-      >
+        method="post">
         <h2 className="mb-5 text-[#8053ff] font-normal">Join Coders Now!</h2>
 
-          <Input
+        <Input
           type="text"
           id="name"
           name="name"
@@ -86,7 +80,9 @@ function SignUpForm() {
         <SignUpBtn name="Sign Up" />
         <p className="mt-5">
           Already have an account?{" "}
-          <Link to="/" className="text-[#8053ff]">
+          <Link
+            to="/"
+            className="text-[#8053ff]">
             Log In
           </Link>
         </p>

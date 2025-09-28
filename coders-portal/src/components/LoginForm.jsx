@@ -1,7 +1,7 @@
 import SignUpBtn from "./SignUpBtn.jsx";
 import Input from "./Input.jsx";
 import { Link } from "react-router-dom";
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signin } from "../store/slices/userSlice.js";
 import { useNavigate } from "react-router-dom";
@@ -31,7 +31,7 @@ function LoginForm() {
       try {
         await dispatch(signin(credentials)).unwrap();
         navigate("/leaderboard");
-      } catch (err) {
+      } catch {
         alert("Invalid email or password");
       }
     }

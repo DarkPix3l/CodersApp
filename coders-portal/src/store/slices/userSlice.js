@@ -24,7 +24,6 @@ export const signin = createAsyncThunk("signin", async (payload) => {
   return result;
 });
 
-
 export const userSlice = createSlice({
   name: "user",
   initialState,
@@ -38,7 +37,8 @@ export const userSlice = createSlice({
     logout: (state) => {
       state.user = null;
     },
-    changePassword: (state, action) => {},
+    /*changePassword: (_state, _action) => {
+    }, */
   },
   extraReducers: (builder) => {
     builder
