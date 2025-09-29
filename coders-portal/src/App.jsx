@@ -9,7 +9,6 @@ import Workspace from "./pages/Workspace.jsx";
 
 function App() {
   return (
-    <>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
@@ -21,7 +20,6 @@ function App() {
           <Route path="/workspace/:slug" element={<Workspace/>} />
         </Route>
       </Routes>
-    </>
   );
 }
 

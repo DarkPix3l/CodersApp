@@ -1,5 +1,3 @@
-import Menu from "../components/UI/Menu";
-
 // Dummy data
 const data = [
   {
@@ -27,31 +25,27 @@ const data = [
 
 export default function Leaderboard() {
   return (
-    <>
-      <Menu />
+    <main
+      className="min-h-svh transition-colors duration-500 ease-in-out"
+      style={{
+        color: "var(--text-color)",
+        backgroundImage: "var(--bg-gradient)",
+      }}>
+      <div className="min-h-screen p-5 md:p-10">
+        <h1 className="font-medium">Leaderboard</h1>
 
-      <main
-        className="min-h-svh transition-colors duration-500 ease-in-out"
-        style={{
-          color: "var(--text-color)",
-          backgroundImage: "var(--bg-gradient)",
-        }}
-      >
-        <div className="min-h-screen p-5 md:p-10">
-          <h1 className="font-medium">Leaderboard</h1>
-        
-        <div className="w-full h-fit  rounded-xl overflow-hidden shadow-[1px_3px_15px_rgba(0,0,0,0.35)]"> {/* tableMask */}
+        <div className="w-full h-fit  rounded-xl overflow-hidden shadow-[1px_3px_15px_rgba(0,0,0,0.35)]">
+          {" "}
+          {/* tableMask */}
           <table
             className="data-table w-full text-center shadow-[10px_5px_35px_rgba(0,0,0,0.25)] "
             style={{
               backgroundColor: "var(--table-body)",
-            }}
-          >
+            }}>
             <thead
               style={{
                 backgroundColor: "var(--table-head)",
-              }}
-            >
+              }}>
               <tr>
                 <th>Rank</th>
                 <th>Name</th>
@@ -73,8 +67,7 @@ export default function Leaderboard() {
             </tbody>
           </table>
         </div>
-        </div>
-      </main>
-    </>
+      </div>
+    </main>
   );
 }

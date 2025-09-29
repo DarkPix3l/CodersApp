@@ -1,11 +1,8 @@
-import Menu from "../components/UI/Menu";
 import ProfileForm from "../components/profile/ProfileForm";
 import ProfileStats from "../components/profile/ProfileStats";
 
 export default function Profile() {
   return (
-    <>
-      <Menu />
       <main
         className="min-h-screen p-5 md:p-10 transition-colors duration-500 ease-in-out"
         style={{
@@ -19,6 +16,5 @@ export default function Profile() {
           <ProfileStats />
         </div>
       </main>
-    </>
   );
 }

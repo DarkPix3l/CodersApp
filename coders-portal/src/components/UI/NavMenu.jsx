@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import DropdownMenu from "../UI/DropdownMenu";
+import DropdownMenu from "./DropdownMenu";
 import ThemeToggleButton from "./ToggleButton";
 import logo from "/img/logo.svg"
 import avatar from "/img/cat.png"
 
-export default function Menu() {
+export default function NavMenu() {
   return (
     <nav
       className="flex justify-between p-5 shadow-xl transition-colors duration-500 ease-in-out"

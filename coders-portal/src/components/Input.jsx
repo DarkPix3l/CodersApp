@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function Input({ type, id, name, placeholder, value, onChange, validation }) {
   const [error, setError] = useState("");
@@ -18,15 +18,12 @@ function Input({ type, id, name, placeholder, value, onChange, validation }) {
   return (
     <div>
       <input
-        className="bg-[#23155b] text-[#817d8e]"
         type={type}
         id={id}
         name={name}
         placeholder={placeholder}
         value={value}
-        onChange={onChange}
-
-      ></input>
+        onChange={onChange}></input>
 
       {error && <p className="errorMessages">{error}</p>}
     </div>
