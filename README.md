@@ -20,7 +20,3 @@ Refactoring of the [Web-Pages-Assignment](https://github.com/DarkPix3l/Web-Pages
 - The page retrieves the current challenge using useParams() from React Router and finds the matching challenge from a local JSON list.
 - Markdown Rendering: Challenge descriptions are rendered using @uiw/react-markdown-preview for rich formatting.
 - Workspace page with code editor using [CodeMirror](https://codemirror.net/) supporting JavaScript and Python
-
-## Managers Portal
-
-Coming soon!
